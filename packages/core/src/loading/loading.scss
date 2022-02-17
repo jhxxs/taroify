@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "./variables";
 
 .#{$component-prefix}loading {
@@ -39,7 +40,7 @@
       // Generate 12 item
       @for $i from 1 through 12 {
         &:nth-of-type(#{$i}) {
-          opacity: 1 - (0.75 / 12) * ($i - 1);
+          opacity: 1 - math.div(0.75 , 12) * ($i - 1);
           transform: rotate($i * 30deg);
         }
       }
